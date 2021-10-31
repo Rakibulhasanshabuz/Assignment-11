@@ -1,0 +1,13 @@
+.li-container li{
+    list-style: none;
+    text-align: start;
+}
+.fas{
+    margin-right: 15px;
+}
+.header{
+    text-align: start; 
+}
+.header i{
+    margin-right: 50px;
+}
