@@ -3,7 +3,6 @@ import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    // onClick={handleGoogleLogin}
     const {signInUsingGoogle} = useAuth();
     const location = useLocation();
     const history = useHistory();

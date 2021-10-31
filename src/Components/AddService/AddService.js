@@ -19,7 +19,7 @@ const AddService = () => {
         <div className="add-service">
             <h1 className="text-warning">Please Add a service</h1>
             <form className="my-4" onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name" />
+      <input {...register("name", { required: true, maxLength: 40 })} placeholder="Name" />
       <textarea {...register("description")} placeholder="Description" />
       <input type="number" {...register("price")} placeholder="Price" />
       <input {...register("img")} placeholder="img url" />

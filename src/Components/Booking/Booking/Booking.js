@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
@@ -30,6 +31,22 @@ const Booking = () => {
             }
         })
     }
+    
+
+    const handleOrder = (data) => {
+        const order = {
+            name : data.name,
+            img : data.img,
+            description: data.description,
+            price: data.price
+        }
+        axios.post('http://localhost:5000/orders', order)
+        .then(res => {
+            if(res.data.insertedId){
+              alert('Your Order Place SuccessFully');
+            }
+          })
+    }
     const {name, img, description, price, _id} = service; 
     return (
         <div>
@@ -51,7 +68,7 @@ const Booking = () => {
                 <div className="d-flex justify-content-around">
                 <button onClick={() => handleDelete(service._id)} className="btn btn-danger">delete</button>
                 <Link to={`/placeOrder/${_id}`}>
-                <button onClick={() => alert('Thanks For Place Order')} className="btn btn-success">Order Place</button>
+                <button onClick={() => handleOrder(service)} className="btn btn-success">Place Order</button>
                 </Link>
                 </div>
                 </Card.Body>
