@@ -8,7 +8,7 @@ const PlaceOrder = () => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://creepy-phantom-09765.herokuapp.com/services/${id}`)
         .then(res => res.json())
         .then(data => {
             setService(data)

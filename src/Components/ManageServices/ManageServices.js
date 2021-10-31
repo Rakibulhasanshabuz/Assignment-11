@@ -6,7 +6,7 @@ const ManageServices = () => {
 
     const handleDelete = id => {
         alert('Do You Want to Delete This Service?')
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://creepy-phantom-09765.herokuapp.com/services/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -20,7 +20,7 @@ const ManageServices = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://creepy-phantom-09765.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setServices(data))
     }, [])

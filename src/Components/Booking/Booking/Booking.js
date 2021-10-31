@@ -12,14 +12,14 @@ const Booking = () => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceKey}`)
+        fetch(`https://creepy-phantom-09765.herokuapp.com/services/${serviceKey}`)
         .then(res => res.json())
         .then(data => setService(data));
     }, [])
 
     const handleDelete = id => {
         alert('Do You Want to Delete This Service')
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://creepy-phantom-09765.herokuapp.com/services/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -40,7 +40,7 @@ const Booking = () => {
             description: data.description,
             price: data.price
         }
-        axios.post('http://localhost:5000/orders', order)
+        axios.post('https://creepy-phantom-09765.herokuapp.com/orders', order)
         .then(res => {
             if(res.data.insertedId){
               alert('Your Order Place SuccessFully');
